@@ -1,0 +1,139 @@
+<html>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5" name="viewport" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+
+  <head>
+    <title>Mohon Maaf Lahir dan Batin - Ramadhan 1444 H</title>
+  </head>
+  <body>
+    <!-- Ganti Audio di sini --><audio src="musik.mp3" id="linkmp3"></audio>
+    <script>
+      audio = new Audio("" + linkmp3.src);
+    </script>
+
+    <div id="bodyblur">
+      <!-- Wallpaper --><img src="img/img1.jpeg" id="wallpaper" />
+      <div id="beneranblur"></div>
+    </div>
+
+    <div id="Content">
+      <div id="suratin" onClick="memulai();"><!-- Tombol Surat --><img src="img/img2.jpg" /></div>
+      <p id="ket">Klik Suratnya!</p>
+
+      <div>
+        <!-- Stiker untuk Konten -->
+        <img src="img/gif1.gif" id="fotoakhir" />
+        <img src="img/lo.gif" id="fotoakhir1" />
+        <img src="img/gifok.gif" id="fotoakhir2" />
+        <img src="img/gifok1.gif" id="fotoakhir3" />
+      </div>
+      <div>
+        <blockquote id="bq">
+          <!-- Konten Penerapan -->
+          <p id="kalimat">Assalamu'alaikum teman-teman✨</p>
+          <p id="kalimata">Kecubung batu dari Kalimantan Disanding elok dengan berlian</p>
+          <p id="kalimatb">Berhubung Kamis sudah Ramadhan</p>
+          <p id="kalimatc">Salah dan khilaf mohon dimaafkan</p>
+
+          <!-- Konten Pertanyaan -->
+          <p id="kalimat2">Mohon Maaf Lahir dan Batin 🙏🏻✨</br>
+            Terselip khilaf pada canda, ada luka tergores pada tawa, terbelit pilu pada tingkah, tersinggung rasa dalam bicara. Mari kita saling memaafkan. </br>
+          </br>Kamu mau maafin aku ga?</p>
+
+          <!-- Konten Jawaban -->
+          <p id="kalimat3">Yeaayy!! Makassih🎉</p>
+          <p id="kalimatb3">Selamat menunaikan Ibadah Puasa yaa💫~</p>
+        </blockquote>
+      </div>
+
+      <!-- Pesan Ditolak -->
+      <div id="pesanditolak">
+        <img id="stikerditolak" src="gif3.gif" />
+        <p id="kataditolak">Aku bener" minta maaf kalau salahku gak dapat dimaafkan 🙏🏻😭</p>
+      </div>
+
+      <!-- Tombol Multifungsi -->
+      <div id="Tombol">
+        <a id="By" onClick="multifungsi()">
+          <b id="tmbl">Lanjut</b>
+          <b id="tmbl2">Maafin</b>
+        </a>
+
+        <a id="Bn" onClick="ditolak()">Ga Maafin</a>
+      </div>
+    </div>
+
+    <!-- Jangan Edit Bagian Ini -->
+    <script>
+      ftom = 0;
+      jikakuis = 0;
+      ftganti = 0;
+      flag = 1;
+      flagg = 1;
+      fungsi = 0;
+
+      function memulai() {
+        pesanwhatsapp = "Mohon maaf lahir dan batin juga Arizki!";
+        suratin.style = "transition:all 1s ease;transform:scale(.1);opacity:0";
+        ket.style = "transition:all 1s ease;transform:scale(.1);opacity:0";
+        setTimeout(mulaikonten, 300);
+      }
+
+      function mulaikonten() {
+        fungsi = 1;
+        suratin.style = "display:none";
+        ket.style = "display:none";
+        Content.style = "opacity:1;margin-top:4vh;";
+        bodyblur.style = "opacity:.4;animation:none";
+        wallpaper.style = "transform: scale(1);";
+        bq.style = "position:relative;opacity:1;visibility:visible;margin-top:0;";
+
+        audio.play();
+        ftganti = 0;
+        ftmuncul();
+
+        setTimeout(mulaiketik1, 700);
+        setTimeout(fmulaiketik1b, 2700);
+        setTimeout(mulaiketik1b, 2700);
+        setTimeout(fmulaiketik2, 3300);
+        setTimeout(mulaiketik2, 3300);
+        setTimeout(fmulaiketik3, 4600);
+        setTimeout(mulaiketik3, 4600);
+      }
+
+      async function menuju() {
+        await swals.fire("OK!", "Kirim pesan ke WhatsApp aku, ya!", "success");
+        window.location = "https://api.whatsapp.com/send?phone=6282289486808&text=" + pesanwhatsapp;
+        Tombol.style = "margin-top:15px;opacity:1;transform: scale(1);";
+      }
+
+      const swalst = Swal.mixin({ timer: 2777, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 100 });
+      const swals = Swal.mixin({ allowOutsideClick: false, cancelButtonColor: "#FF0040", imageWidth: 100, imageHeight: 100 });
+      const body = document.querySelector("body");
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "fas fa-heart";
+        heart.style.left = Math.random() * 90 + "vw";
+        heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+        body.appendChild(heart);
+      }
+      setInterval(function name(params) {
+        var heartArr = document.querySelectorAll(".fa-heart");
+        if (heartArr.length > 100) {
+          heartArr[0].remove();
+        }
+      }, 100);
+    </script>
+    <script src="script.js"></script>
+    <!-- Sampai Sini -->
+  </body>
+</html>
